@@ -1,0 +1,1 @@
+<h1 style="display: flex; justify-content: center; align-items: center; margin-top: 50vh;">Success! | DB에 입력이 성공적으로 완료되었습니다</h1>

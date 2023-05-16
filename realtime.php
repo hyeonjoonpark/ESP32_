@@ -59,7 +59,8 @@
 		$row['did'];
 		echo "<script> var mydid = '".$row['did']."' </script>";
 	}
-    echo "<button style=\"width: 70px; height: 30px; background: aliceblue; border-radius: 10px\" onclick='set_did(\"".$row['did']."\")' >".$row['did']."</button>". " ";
+    echo "<button style=\"width: 70px; height: 30px; background: aliceblue; border-radius: 10px\" onclick='set_did(\"".$row['did']."\")' >"
+	.$row['did']."</button>". " ";
   }
 ?>
 

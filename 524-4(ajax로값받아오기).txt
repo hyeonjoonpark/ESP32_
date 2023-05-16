@@ -21,36 +21,36 @@ void handleRoot(){
   int sensor = random(1000,2000);
   
 
-String myresponse = "\
-<html>\
-  <head>\
-    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>\
-    <script>\
-      $(document).ready(function() {\
-         setInterval(function() {\
-            $.ajax({\
-            url: \"/sensor\",\
-            method: \"GET\",\
-            dataType: \"text\",\
-            success: function(data) {\
-              $(\"#result\").html(data);\
-            }\
-           })\
-         },1000);\
-      });\
-    </script>\
-  </head>\
-  <body>\
-    <table border=1 width=500>\
-      <tr>\
-        <th colspan=2>nockanda 524</th>\
-      </tr>\
-      <tr>\
-        <td width=100>Sensor Value</td>\
-        <td id=result>%sensor%</td>\
-      </tr>\
-    </table>\
-      </body>\
+String myresponse = " 
+<html> 
+  <head> 
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script> 
+    <script> 
+      $(document).ready(function() { 
+         setInterval(function() { 
+            $.ajax({ 
+            url:  "/sensor ", 
+            method:  "GET ", 
+            dataType:  "text ", 
+            success: function(data) { 
+              $( "#result ").html(data); 
+            } 
+           }) 
+         },1000); 
+      }); 
+    </script> 
+  </head> 
+  <body> 
+    <table border=1 width=500> 
+      <tr> 
+        <th colspan=2>nockanda 524</th> 
+      </tr> 
+      <tr> 
+        <td width=100>Sensor Value</td> 
+        <td id=result>%sensor%</td> 
+      </tr> 
+    </table> 
+      </body> 
 </html>";
 
   myresponse.replace("%sensor%",String(sensor));
@@ -67,16 +67,16 @@ void handleSensor(){
 
 void handleNotFound() {
   digitalWrite(led, 1);
-  String message = "File Not Found\n\n";
+  String message = "File Not Found n n";
   message += "URI: ";
   message += server.uri();
-  message += "\nMethod: ";
+  message += " nMethod: ";
   message += (server.method() == HTTP_GET) ? "GET" : "POST";
-  message += "\nArguments: ";
+  message += " nArguments: ";
   message += server.args();
-  message += "\n";
+  message += " n";
   for (uint8_t i = 0; i < server.args(); i++) {
-    message += " " + server.argName(i) + ": " + server.arg(i) + "\n";
+    message += " " + server.argName(i) + ": " + server.arg(i) + " n";
   }
   server.send(404, "text/plain", message);
   digitalWrite(led, 0);

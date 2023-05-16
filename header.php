@@ -4,5 +4,6 @@
     <a href=device.php style="text-decoration: none; color: black">[디바이스등록]</a>
     <a href=view.php style="text-decoration: none; color: black">[센서값보기]</a>
     <a href=realtime.php style="text-decoration: none; color: black">[실시간센서값보기]</a>
+    <a href=controlInput.php style="text-decoration: none; color: black">[LED 제어하기]</a>
    </td></tr>
 </table>
