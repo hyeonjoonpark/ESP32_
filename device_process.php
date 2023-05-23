@@ -1,4 +1,6 @@
 <?php
+  include 'db_info.php';
+
    date_default_timezone_set('Asia/Seoul');
    $did = $_POST['mydid'];
    $loc = $_POST['myloc'];
@@ -6,14 +8,14 @@
    $date = date("Y-m-d H:i:s",time());
 
    //MYSQL연결한다
-     $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+   $conn = mysqli_connect('localhost', $db_id, $db_pw, $db_name);
     //데이터를 insert하는 SQL쿼리를 작성
     $query = "insert into device values('".$did."','".$loc."','".$type."','".$date."');";
     //SQL쿼리를 실행
     $result = mysqli_query($conn, $query);
     //실행결과 확인
     if($result){
-     echo "성공";
+     include ;
     }else{
      echo "실패";
     }

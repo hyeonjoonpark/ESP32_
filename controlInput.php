@@ -1,5 +1,6 @@
 <?php 
   include 'header.php';
+  include 'db_info.php';
 ?>
 
 
@@ -7,7 +8,7 @@
     <select name="did" > 
         <?php
         //device table에 있는 디바이스명으로 드롭다운 메뉴를만든다
-        $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+        $conn = mysqli_connect('localhost', $db_id, $db_pw, $db_name);
         $query = "select * from device;";
         $result = mysqli_query($conn, $query);
         while($row = mysqli_fetch_assoc($result)){

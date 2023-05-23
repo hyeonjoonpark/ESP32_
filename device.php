@@ -1,14 +1,15 @@
 <?php
+    include 'db_info.php';
    include 'header.php';
   //MYSQL연결한다
-   $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+  $conn = mysqli_connect('localhost', $db_id, $db_pw, $db_name);
    //데이터를 읽어오는 쿼리를 작성한다
    $query = "select * from device;";
    //쿼리를 실행한다
    $result = mysqli_query($conn, $query);
    //결과를 출력한다
  
-   echo "<table border=1 width=500>"; 
+   echo "<table border=1 width=100%>"; 
       echo "<tr>";
     echo "<th>디바이스명</th>";
     echo "<th>설치장소</th>";

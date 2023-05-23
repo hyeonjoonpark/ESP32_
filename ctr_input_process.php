@@ -1,4 +1,5 @@
 <?php
+  include 'db_info.php'
    date_default_timezone_set('Asia/Seoul');
    $did = $_POST['did'];
    $pin = $_POST['pinnum'];
@@ -6,7 +7,7 @@
    $date = date("Y-m-d H:i:s",time());
 
    //MYSQL연결한다
-     $conn = mysqli_connect('localhost', 'root', '','bssm2_4');
+   $conn = mysqli_connect('localhost', $db_id, $db_pw, $db_name);
     //데이터를 insert하는 SQL쿼리를 작성
     $query = "insert into control(did, pin, cmd, checked, date) values('".$did."', '".$pin."', '".$cmd."', 0, '".$date."');";
     //SQL쿼리를 실행
