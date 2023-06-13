@@ -1,6 +1,6 @@
 #include <WiFi.h>
 
-const char * host = "10.129.55.189";
+const char * host = "10.150.149.66";
 const int Port = 80;
 
 const char* ssid = "bssm_free";

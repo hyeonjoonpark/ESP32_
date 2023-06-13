@@ -1,4 +1,6 @@
-﻿<?php
+﻿<!-- 2407 박현준 -->
+
+<?php
 	include 'header.php';
 ?>
 
