@@ -1,6 +1,6 @@
-#include <WiFi.h>
+ #include <WiFi.h>
 #include "DHT.h"
-#define DHTPIN 16    //핀번호
+#define DHTPIN 17    //핀번호
 #define DHTTYPE DHT11 
 DHT dht(DHTPIN, DHTTYPE);
 //인터넷 공유기 아이디 비밀번호이다!
@@ -43,18 +43,18 @@ void loop() {
   //2.서버에 request를 전송한다
   int num = 100;
   float h = dht.readHumidity();
-  float temp = dht.readTemperature();
+  float t = dht.readTemperature();
   //클라이언트가 서버의 /bssm2_4/upload.php에 아래와 같은 url로 전송한다
-  String url = "/bssm2_4/test/upload.php?temp="+String(temp)+"&humi=" + String(h);
+  String url = "/bssm2_4/test/upload.php?t="+String(t)+"&h=" + String(h);
   //String url = "/test?id=6&data="+String(temp);
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" +
                "Connection: close\r\n\r\n");
   //3.서버가 보낸 response를 수신한다
-  unsigned long t = millis(); //생존시간
+  unsigned long time = millis(); //생존시간
   while(1){
     if(client.available()) break;
-    if(millis() - t > 10000) break;
+    if(millis() - time > 10000) break;
   }
   //서버가 보낸 데이터가 버퍼에서 없어질때까지~
   while(client.available()){
